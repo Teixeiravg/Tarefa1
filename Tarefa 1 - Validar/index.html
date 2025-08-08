@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - SENAI</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script language="JavaScript" src="javascript/validar.js"></script>
+</head>
+
+<body onload="criterios()">
+
+    <div class="container">
+        <header>
+            <img src="imagens/logo.png" alt="Logo SENAI" class="logo">
+            <h2>Formulário de Cadastro</h2>
+        </header>
+
+        <form onsubmit="return validacao()">
+            <div class="form-group">
+                <label for="nome">Nome Completo:*</label>
+                <input type="text" id="nome" name="nome" >
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:*</label>
+                <input type="email" id="email" name="email" >
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha:*</label>
+                <input type="password" id="senha" name="senha" >
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="data">Nascimento:*</label>
+                    <input type="date" id="data" name="data">
+                </div>
+
+                <div class="form-group">
+                    <label for="idade">Idade:*</label>
+                    <input type="number" id="idade" name="idade" min="0" max="120">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone:*</label>
+                <input type="tel" id="telefone" name="telefone">
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Gênero:*</label>
+                <select id="genero" name="genero" onchange="mostrarOutroGenero(this)">
+                    <option value="">Selecione</option>
+                    <option value="masculino">Homem cisgênero</option>
+                    <option value="feminino">Mulher cisgênero</option>
+                    <option value="transmasculino">Homem trans</option>
+                    <option value="transfeminino">Mulher trans</option>
+                    <option value="nao-binario">Pessoa não binária</option>
+                    <option value="outro">Outro</option>
+                    <option value="nao-informar">Prefiro não informar</option>
+                </select>
+                <input type="text" id="generoOutro" name="generoOutro" placeholder="Descreva seu gênero"
+                    style="display:none; margin-top: 10px;">
+            </div>
+
+
+            <div class="form-group">
+                <label>Interesses:*</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="interesses" value="HTML"> HTML</label>
+                    <label><input type="checkbox" name="interesses" value="CSS"> CSS</label>
+                    <label><input type="checkbox" name="interesses" value="JavaScript"> JavaScript</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="contato">Preferência de contato:*</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="contato" value="email"> E-mail</label>
+                    <label><input type="radio" name="contato" value="telefone"> Telefone</label>
+                    <label><input type="radio" name="contato" value="whatsapp"> WhatsApp</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="arquivo">Anexar arquivo:</label>
+                <input type="file" id="arquivo" name="arquivo">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="site">Portfólio:</label>
+                    <input type="url" id="site" name="site" placeholder="Ex: https://meuportifolio.com">
+                </div>
+                <div class="form-group">
+                    <label for="cor">Cor favorita:</label>
+                    <input type="color" id="cor" name="cor">
+                </div>
+                <div class="form-group">
+                    <label for="hora">Horário preferido:*</label>
+                    <input type="time" id="hora" name="hora">
+                </div>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
